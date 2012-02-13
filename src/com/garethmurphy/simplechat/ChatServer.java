@@ -1,4 +1,5 @@
 package com.garethmurphy.simplechat;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,23 +9,22 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ChatServer {
+
+	private int port = 5000;
 	
 	/* These ArrayLists will keep track of all open socket connections and their
 	 * corresponding Threads. Each connection gets its own thread.
-	 */	
+	 */
 	private ArrayList<Socket> connections = new ArrayList<Socket>();
 	private ArrayList<Thread> threads = new ArrayList<Thread>();
 
 	public static void main(String[] args) {
-		
-		// Simply start the server listening on the appropriate port.
 		new ChatServer().startServer();
 	}
 	
 	public void startServer() {
 		try {
-			// You can pick any arbitrary unused port 
-			ServerSocket serverSock = new ServerSocket(5000);
+			ServerSocket serverSock = new ServerSocket(port);
 			
 			// Keeps track of index of latest client connection in the ArrayList
 			int i = 0;
@@ -32,10 +32,6 @@ public class ChatServer {
 			// Infinite listener loop
 			while(true) {
 				
-				/* The 'accept()' method blocks; it sits and waits for a
-				 * connection to come in, so this isn't as non-performant as
-				 * you'd think.
-				 */
 				Socket clientSock = serverSock.accept();
 				
 				connections.add(clientSock);
