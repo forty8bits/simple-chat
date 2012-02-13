@@ -54,7 +54,6 @@ public class ChatServer {
 	class ClientListener implements Runnable {
 		
 		private BufferedReader clientIn;
-		int msgNum = 1;
 		private String name;
 		
 		public ClientListener(int i, Socket sock) {
