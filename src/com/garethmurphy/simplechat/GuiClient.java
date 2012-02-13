@@ -40,7 +40,7 @@ public class GuiClient {
 	 */
 	public static void main(String[] args) {
 		try {
-			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
@@ -114,9 +114,8 @@ public class GuiClient {
 		scrollPane.setViewportView(textPane);
 		textPane.setEditable(false);
 		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 5, 5, 0);
+		gbc_textField.insets = new Insets(0, 5, 5, 5);
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.anchor = GridBagConstraints.NORTH;
 		gbc_textField.gridx = 0;
 		gbc_textField.gridy = 1;
 		frmSimplechat.getContentPane().add(textField, gbc_textField);
