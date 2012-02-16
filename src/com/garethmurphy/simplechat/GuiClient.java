@@ -97,7 +97,6 @@ public class GuiClient {
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setFocusTraversalKeysEnabled(false);
-		scrollPane.setFocusable(false);
 		scrollPane.setRequestFocusEnabled(false);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.insets = new Insets(5, 5, 5, 5);
@@ -110,7 +109,6 @@ public class GuiClient {
 		textPane = new JTextPane();
 		textPane.setFocusTraversalKeysEnabled(false);
 		textPane.setFocusCycleRoot(false);
-		textPane.setRequestFocusEnabled(false);
 		scrollPane.setViewportView(textPane);
 		textPane.setEditable(false);
 		GridBagConstraints gbc_textField = new GridBagConstraints();
@@ -130,7 +128,7 @@ public class GuiClient {
 				textField.requestFocus();
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(GuiClient.class.getResource("/com/garethmurphy/simplechat/res/balloon-white-left.png")));
+		btnNewButton.setIcon(new ImageIcon(GuiClient.class.getResource("/com/garethmurphy/simplechat/resources/balloon-white-left.png")));
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.gridx = 1;
